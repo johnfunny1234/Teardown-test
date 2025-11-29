@@ -1,0 +1,14 @@
+<scene version="1.3">
+    <group name="city">
+        <body name="city-base" dynamic="false" tags="level">
+            <vox file="vox/city.vox" scale="1" />
+        </body>
+
+        <player pos="32 6 32" rot="0 0 0" />
+
+        <light type="sun" intensity="3.2" anglex="45" anglez="35" shadow="1" />
+        <skybox texture="" suncolor="1 0.95 0.9" groundcolor="0.6 0.7 0.8" />
+
+        <script file="main.lua" />
+    </group>
+</scene>
