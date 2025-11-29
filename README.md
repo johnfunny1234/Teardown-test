@@ -1,26 +1,17 @@
-# Teardown City Map
+# Teardown Twin Towers City
 
-This repository contains a compact custom city map for Teardown along with a small tool that procedurally generates the voxel asset used by the level.
+This repository ships a ready-to-play Teardown sandbox: a detailed Twin Towers-inspired plaza surrounded by city blocks, memorial pools, and skyline silhouettes. Everything needed to spawn the map is text-only—no binary assets or external tools required.
 
 ## Contents
-- `mods/city-map/level.xml` — scene layout pointing to the voxel map and a simple lighting setup.
-- `mods/city-map/main.lua` — lightweight script that shows a short hint when the level starts.
-- `mods/city-map/vox/` — output folder for the generated `city.vox` map that includes roads, parks, and several mid-rise buildings. A `.gitkeep` placeholder is committed because the binary voxel file itself is generated.
-- `tools/generate_city_vox.py` — utility for regenerating the voxel asset if you want to tweak the layout or palette.
-
-## Regenerating the voxel map
-Binary assets are not stored in this repository. If you make changes to the layout logic or want to experiment with different palettes, run:
-
-```bash
-python tools/generate_city_vox.py
-```
-
-The script writes `mods/city-map/vox/city.vox` (ignored by git) and reports how many voxels are included.
+- `mods/city-map/level.xml` — slim scene definition that boots the scripted spawn and lighting.
+- `mods/city-map/main.lua` — unpacks the voxel asset from its Base64 text and spawns the full plaza and city skyline.
+- `mods/city-map/vox/twin_towers.vox.b64` — text-encoded voxel data for the entire map (towers, plaza, streets, trees, surrounding buildings).
 
 ## Using the map in Teardown
-1. Run the generator above to create `mods/city-map/vox/city.vox`.
-2. Copy the `mods/city-map` directory into your Teardown `Documents/Teardown/mods` folder (or symlink it during development).
-3. Launch Teardown and open the mod in the sandbox menu. The player spawn is centered at the intersection of two main streets.
-4. Use the provided hint text as guidance: the parks occupy opposite corners and buildings of varying heights surround the cross streets.
+1. Copy the `mods/city-map` directory into your Teardown `Documents/Teardown/mods` folder (or symlink it during development).
+2. Launch Teardown and open the mod in the sandbox menu. The script automatically decodes the bundled Base64 file to `vox/twin_towers.vox` on first load, then spawns the city.
+3. You start in the central plaza, framed by the twin towers, skybridge, memorial pools, tree rows, and multi-block skyline—ready to reshape without running any generators.
 
-Feel free to customize building heights, palette colors, or spawn position in `tools/generate_city_vox.py` and `mods/city-map/level.xml` to create different city moods.
+## Notes
+- Because the voxel data is stored as text, there are no binary files in the repository. The mod writes the binary `.vox` file at runtime before spawning the scene.
+- If you ever delete `vox/twin_towers.vox`, it will be recreated automatically on the next launch.
