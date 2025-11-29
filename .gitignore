@@ -1,0 +1,3 @@
+# Generated voxel asset for the city map
+mods/city-map/vox/*.vox
+!mods/city-map/vox/.gitkeep

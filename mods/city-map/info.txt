@@ -1,0 +1,7 @@
+title = "Compact City"
+author = "Teardown-test"
+description = "Small custom city sandbox with intersecting streets, parks, and mid-rise buildings."
+type = "level"
+version = "1.0"
+map = "level.xml"
+script = "main.lua"
