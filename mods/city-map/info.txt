@@ -1,6 +1,6 @@
 title = "Twin Towers City"
 author = "Teardown-test"
-description = "Detailed Twin Towers plaza with memorial pools, trees, lit avenues, and surrounding skyline blocks—auto-unpacked from text."
+description = "Detailed Twin Towers plaza with memorial pools, trees, lit avenues, and surrounding skyline blocks - auto-unpacked from text."
 type = "level"
 version = "1.1"
 map = "level.xml"
